@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-
+require('dotenv').config({ path: process.cwd() + '/.env' });
 
 // Authorise right access to request content - same as body-parser
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next();
 });
 
-mongoose.connect('mongodb+srv://filoupegase:Filoupegase1997@ktr-msc-ls1.mjjv5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://${ process.env.MONGOOSE_ADMIN }:${ process.env.MONGOOSE_PASSWORD }@ktr-msc-ls1.mjjv5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
