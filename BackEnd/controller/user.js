@@ -4,21 +4,31 @@ const User = require('../Models/User');
 
 // Bonus 3 ;)
 exports.signup = (req, res, next) => {
+  if (req.body.password === '') {
+    const user = new User({
+      username: req.body.username,
+      companyName: req.body.companyName,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+      password: req.body.password
+    });
+    user.save()
+        .then(() => res.status(201).json({ message: 'Utilisateur créé avec Succes' }))
+        .catch(error => res.status(400).json({ error }));
+  }
   bcrypt.hash(req.body.password, 10)
       .then(hash => {
         const user = new User({
-          name: req.body.name,
+          username: req.body.username,
           companyName: req.body.companyName,
-          emailAddress: req.body.emailAddress,
-          telephoneNumber: req.body.telephoneNumber,
           email: req.body.email,
+          phoneNumber: req.body.phoneNumber,
           password: hash
         });
         user.save()
-            .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
+            .then(() => res.status(201).json({ message: 'Utilisateur créé avec Succes' }))
             .catch(error => res.status(400).json({ error }));
-      })
-      .catch(error => res.status(500).json({ error }));
+      }).catch(error => res.status(500).json({ error }));
 };
 
 exports.login = (req, res, next) => {
