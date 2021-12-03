@@ -114,7 +114,6 @@ export default class Login extends Component {
                     name="password"
                     value={ this.state.password }
                     onChange={ this.onChangePassword }
-                    validations={ [required] }
                 />
               </div>
 

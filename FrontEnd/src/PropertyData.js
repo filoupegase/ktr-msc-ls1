@@ -2,29 +2,23 @@ export class PropertyData {
   /**
    * @constructs
    * @param {string} _id
-   * @param {string} title
-   * @param {string} description
-   * @param {string} imageUrl
-   * @param {string} userId
-   * @param {number} price
-   * @param {number} __v
+   * @param {string} name
+   * @param {string} companyName
+   * @param {string} emailAddress
+   * @param {number} phoneNumber
    */
   constructor(
       _id,
-      title,
-      description,
-      imageUrl,
-      userId,
-      price,
-      __v
+      name,
+      companyName,
+      emailAddress,
+      phoneNumber
   ) {
     this._id = _id;
-    this.title = title;
-    this.description = description;
-    this.imageUrl = imageUrl;
-    this.userId = userId;
-    this.price = price;
-    this.__v = __v;
+    this.name = name;
+    this.companyName = companyName;
+    this.emailAddress = emailAddress;
+    this.phoneNumber = phoneNumber;
   }
 }
 

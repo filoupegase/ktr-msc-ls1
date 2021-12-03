@@ -3,11 +3,10 @@ const Thing = require('../Models/Things');
 
 exports.createThing = (req, res, next) => {
   const thing = new Thing({
-    title: req.body.title,
-    description: req.body.description,
-    imageUrl: req.body.imageUrl,
-    price: req.body.price,
-    userId: req.body.userId
+    name: req.body.name,
+    companyName: req.body.companyName,
+    emailAddress: req.body.emailAddress,
+    phoneNumber: req.body.phoneNumber
   });
   thing.save().then(
       () => {
@@ -24,33 +23,3 @@ exports.createThing = (req, res, next) => {
   );
 };
 
-exports.getOneThing = (req, res, next) => {
-  Thing.findOne({
-    _id: req.params.id
-  }).then(
-      (thing) => {
-        res.status(200).json(thing);
-      }
-  ).catch(
-      (error) => {
-        res.status(404).json({
-          error: error
-        });
-      }
-  );
-};
-
-
-exports.getAllStuff = (req, res, next) => {
-  Thing.find().then(
-      (things) => {
-        res.status(200).json(things);
-      }
-  ).catch(
-      (error) => {
-        res.status(400).json({
-          error: error
-        });
-      }
-  );
-};

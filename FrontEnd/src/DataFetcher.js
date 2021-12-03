@@ -23,12 +23,10 @@ export class DataFetcher {
       for (let advertisement of data) {
         const advertisementInstance = new PropertyData(
             advertisement._id,
-            advertisement.title,
-            advertisement.description,
-            advertisement.imageUrl,
-            advertisement.userId,
-            advertisement.price,
-            advertisement.__v
+            advertisement.name,
+            advertisement.companyName,
+            advertisement.emailAddress,
+            advertisement.phoneNumber
         );
         advertisementInstances.push(advertisementInstance);
       }

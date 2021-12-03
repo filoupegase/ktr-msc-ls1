@@ -18,7 +18,7 @@ class App extends Component {
             <Header/>
             <Routes>
               <Route path="/" element={
-                <Home advertisements={ advertisementsList.advertisements }/> } strict exact/>
+                <Home/> }/> } strict exact/>
               <Route path="/login" element={
                 <Login/> } strict exact/>
               <Route path="/register" element={
@@ -26,9 +26,9 @@ class App extends Component {
               <Route path="/profile" element={
                 <Profile/> } strict exact/>
               <Route path="/create-card" element={
-                <Home advertisements={ advertisementsList.advertisements }/> } strict exact/>
+                <Home/> } strict exact/>
               <Route path="*" element={
-                <Home advertisements={ advertisementsList.advertisements }/> }
+                <Home/> }
               />
             </Routes>
           </div>

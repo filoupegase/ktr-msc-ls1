@@ -32,8 +32,11 @@ class Home extends Component {
 
   render() {
     return (
-        <div className="App">
-          { this.props.advertisements.map(({ id, title, imageUrl, description, price }) => (
+        <div className="container">
+          <header className="jumbotron">
+            <h3>{ this.state.content }</h3>
+          </header>
+          {/* { this.props.advertisements.map(({ id, title, imageUrl, description, price }) => (
               <Card
                   key={ `card-${ id }` }
                   id={ id }
@@ -42,7 +45,7 @@ class Home extends Component {
                   description={ description }
                   price={ price }
               />
-          )) }
+          )) }*/ }
         </div>
     );
   }

@@ -1,13 +1,11 @@
 import axios from 'axios';
 
-
 class AuthService {
-  login(name, password) {
-    return axios
-        .post('http://localhost:3000/api/auth/login', {
-          name,
-          password
-        })
+  login(username, password) {
+    return axios.post('http://localhost:3000/api/auth/login', {
+      username,
+      password
+    })
         .then(response => {
           if (response.data.token) {
             localStorage.setItem('user', JSON.stringify(response.data));

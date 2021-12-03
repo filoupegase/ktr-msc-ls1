@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 const thingSchema = mongoose.Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  imageUrl: { type: String, required: true },
-  userId: { type: String, required: true },
-  price: { type: Number, required: true }
+  name: { type: String, required: false },
+  companyName: { type: String, required: false },
+  emailAddress: { type: String, required: true },
+  phoneNumber: { type: Number, required: false }
 });
 
 module.exports = mongoose.model('Thing', thingSchema);
