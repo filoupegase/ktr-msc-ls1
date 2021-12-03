@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
 
 
 // Authorise right access to request content - same as body-parser
 app.use(express.json());
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -11,6 +13,13 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
+
+mongoose.connect('mongodb+srv://filoupegase:Filoupegase1997@ktr-msc-ls1.mjjv5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }).then(() => console.log('Connexion à MongoDB réussie !'))
+    .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 app.post('/api/stuff', (req, res, next) => {
   console.log(req.body);
