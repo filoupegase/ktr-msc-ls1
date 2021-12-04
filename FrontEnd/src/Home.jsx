@@ -16,18 +16,19 @@ class Home extends Component {
 
   componentDidMount() {
     const user = AuthService.getCurrentUser();
-    CardHandler.getAllCard(user.user.username)
-        .then((params) => {
-          this.setState({
-            content: params.data,
-            loading: false
+    if (user) {
+      CardHandler.getAllCard(user.user.username)
+          .then((params) => {
+            this.setState({
+              content: params.data,
+              loading: false
+            });
           });
-        });
+    }
   }
 
   render() {
     const cards = !this.state.loading && this.state.content.map((elm, indx) => {
-      console.log(elm);
       return <Card
           key={ indx }
           name={ elm.name }
