@@ -56,12 +56,3 @@ class Home extends Component {
 
 export default Home;
 
-/*<Card
-    key={ inx }
-    id={ id }
-    name={ name }
-    companyName={ companyName }
-    email={ email }
-    phoneNumber={ phoneNumber }
-    message={ message }
-/>*/

@@ -1,7 +1,7 @@
 const Thing = require('../Models/Things');
 
 exports.getAllStuff = (req, res, next) => {
-  Thing.find((el, el2) => {
+  Thing.find((el, el2, el3) => {
     return el2.username === req.body.username;
   }).clone().then((result) => {
     res.status(200).json(result);
@@ -18,7 +18,7 @@ exports.createThing = (req, res, next) => {
   });
   thing.save().then(
       () => {
-        res.status(201).json({
+        res.status(200).json({
           message: 'Post saved successfully!'
         });
       }
