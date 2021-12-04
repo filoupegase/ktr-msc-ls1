@@ -1,9 +1,8 @@
 const Thing = require('../Models/Things');
 
 exports.getAllStuff = (req, res, next) => {
-  Thing.find((el, el2, el3) => {
-    return el2.username === req.body.username;
-  }).clone().then((result) => {
+  let query = { username: req.body.username };
+  Thing.find(query).clone().then((result) => {
     res.status(200).json(result);
   });
 };
