@@ -2,7 +2,7 @@ const Thing = require('../Models/Things');
 
 exports.getAllStuff = (req, res, next) => {
   let query = { username: req.body.username };
-  Thing.find(query).clone().then((result) => {
+  Thing.find(query).then((result) => {
     res.status(200).json(result);
   });
 };
