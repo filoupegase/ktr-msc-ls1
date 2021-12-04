@@ -18,7 +18,6 @@ class Home extends Component {
     const user = AuthService.getCurrentUser();
     CardHandler.getAllCard(user.user.username)
         .then((params) => {
-          console.log(params.data);
           this.setState({
             content: params.data,
             loading: false
@@ -40,10 +39,15 @@ class Home extends Component {
     });
     return (
         <div className="container">
-          <h3>Vous n'avez pas encore de Carte de business, Ajoutez en Une !</h3>
-          <Link to={ '/library' } className="nav-link">
-            Library
-          </Link>
+          { !this.state.loading && this.state.content.length === 0 ?
+              <>
+                <h3>Vous n'avez pas encore de Carte de business, Ajoutez en Une !</h3>
+                <Link to={ '/library' } className="nav-link">
+                  Library
+                </Link>
+              </>
+              : <></>
+          }
           { cards }
         </div>
     );

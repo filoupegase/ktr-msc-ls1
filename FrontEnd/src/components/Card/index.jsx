@@ -5,15 +5,14 @@ import './Card.scss';
 
 class Card extends Component {
   render() {
-    const { name, companyName, email, message, phoneNumber } = this.props;
+    const { name, companyName, email, phoneNumber } = this.props;
     return (
         <>
           <article className="card-body">
-            <p className="card-title">{ name }</p>
-            <p className="card-description">{ companyName }</p>
-            <p className="card-imageUrl">{ email }</p>
-            <p className="card-userId">{ phoneNumber }</p>
-            <p className="card-price">{ message }</p>
+            <p className="card-title">Name : { name }</p>
+            <p className="card-description">companyName : { companyName }</p>
+            <p className="card-imageUrl">email : { email }</p>
+            <p className="card-userId">phoneNumber : { phoneNumber }</p>
           </article>
         </>
     );
@@ -24,8 +23,7 @@ Card.propTypes = {
   name: PropTypes.string,
   companyName: PropTypes.string,
   email: PropTypes.string,
-  phoneNumber: PropTypes.string,
-  message: PropTypes.number
+  phoneNumber: PropTypes.number
 };
 
 export default Card;
