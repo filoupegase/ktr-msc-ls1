@@ -123,7 +123,7 @@ export default class Register extends Component {
               { !this.state.successful && (
                   <div>
                     <div className="form-group">
-                      <label htmlFor="username">Name</label>
+                      <label htmlFor="username">UserName</label>
                       <Input
                           type="text"
                           className="form-control"

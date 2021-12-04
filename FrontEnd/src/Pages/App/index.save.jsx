@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from '../../components/Header';
 import Home from '../../Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from '../../components/login';
+import Login from '../../components/Login';
 import Register from '../../components/register';
 import Profile from '../../components/profile';
 
@@ -11,7 +11,9 @@ import Profile from '../../components/profile';
 class App extends Component {
   render() {
     const { advertisementsList } = this.props;
-    console.log('App advertisementsList :', advertisementsList);
+    /*
+        console.log('App advertisementsList :', advertisementsList);
+    */
     return (
         <>
           <div className="container">

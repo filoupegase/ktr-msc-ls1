@@ -4,7 +4,7 @@ import './index.css';
 import { DataFetcher } from './DataFetcher';
 import { BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import App from './Pages/App/index.save';
+import App from './Pages/App/App';
 
 
 /*async function initApp(dataFetcher) {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Card from './components/Card';
 import UserService from './services/user.service';
 
 class Home extends Component {
@@ -33,10 +32,7 @@ class Home extends Component {
   render() {
     return (
         <div className="container">
-          <header className="jumbotron">
-            <h3>{ this.state.content }</h3>
-          </header>
-          {/* { this.props.advertisements.map(({ id, title, imageUrl, description, price }) => (
+          { this.props.advertisements.map(({ id, title, imageUrl, description, price }) => (
               <Card
                   key={ `card-${ id }` }
                   id={ id }
@@ -45,7 +41,7 @@ class Home extends Component {
                   description={ description }
                   price={ price }
               />
-          )) }*/ }
+          )) }
         </div>
     );
   }
