@@ -5,8 +5,7 @@ import AuthService from '../../services/auth.service';
 import Login from '../../components/Login';
 import Register from '../../components/register';
 import Home from '../../Home';
-import Profile from '../../components/profile';
-import BoardUser from '../../components/BoadUser';
+import Library from '../Library';
 
 class App extends Component {
   constructor(props) {
@@ -23,9 +22,6 @@ class App extends Component {
   componentDidMount() {
     const user = AuthService.getCurrentUser();
     if (user) {
-      console.log('user is hear :', user.user);
-    }
-    if (user) {
       this.setState({
         currentUser: user.user
       });
@@ -37,7 +33,7 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
+    const { currentUser } = this.state;
 
     return (
         <div>
@@ -48,8 +44,13 @@ class App extends Component {
             { currentUser ? (
                 <div className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <Link to={ '/profile' } className="nav-link">
+                    <Link to={ '/' } className="nav-link">
                       { currentUser.username }
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to={ '/library' } className="nav-link">
+                      Library
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -80,6 +81,7 @@ class App extends Component {
               <Route exact path="/" element={ <Home/> }/>
               <Route exact path="/login" element={ <Login/> }/>
               <Route exact path="/register" element={ <Register/> }/>
+              <Route exact path="/library" element={ <Library/> }/>
             </Routes>
           </div>
         </div>

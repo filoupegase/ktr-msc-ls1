@@ -57,7 +57,7 @@ export default class Login extends Component {
                 this.setState({
                   loading: false
                 });
-                history.push('/profile');
+                history.push('/');
                 window.location.reload();
               }
           ).catch((error) => {

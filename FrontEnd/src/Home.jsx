@@ -1,47 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserService from './services/user.service';
+import Card from './components/Card';
+import { Link } from 'react-router-dom';
+import CardHandler from './services/CardHandler';
+import AuthService from './services/auth.service';
 
 class Home extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      content: ''
-    };
   }
 
   componentDidMount() {
-    UserService.getPublicContent().then(
-        response => {
-          this.setState({
-            content: response.data
-          });
-        },
-        error => {
-          this.setState({
-            content:
-                (error.response && error.response.data) ||
-                error.message ||
-                error.toString()
-          });
-        }
-    );
+    const user = AuthService.getCurrentUser();
+    CardHandler.getAllCard(user.user.username).then((params) => {
+      console.log(params.data);
+    });
   }
+
 
   render() {
     return (
         <div className="container">
-          { this.props.advertisements.map(({ id, title, imageUrl, description, price }) => (
-              <Card
-                  key={ `card-${ id }` }
-                  id={ id }
-                  imageUrl={ imageUrl }
-                  title={ title }
-                  description={ description }
-                  price={ price }
-              />
-          )) }
+          <h3>Vous n'avez pas encore de Carte de business, Ajoutez en Une !</h3>
+          <Link to={ '/library' } className="nav-link">
+            Library
+          </Link>
         </div>
     );
   }
