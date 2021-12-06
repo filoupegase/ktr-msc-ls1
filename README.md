@@ -19,7 +19,7 @@ npm install -g nodemon
 git clone https://github.com/filoupegase/ktr-msc-ls1.git
 ```
 
-#### 1. BackEnd
+#### 1. Install BackEnd
 
 2. Déplacez vous dans le dossier `/Backend`
 
@@ -41,7 +41,7 @@ nodemon server
 
 Rendez-vous sur [http://localhost:3000](http://localhost:3000/) et dans votre terminal
 
-#### 2. FrontEnd
+#### 2. Install FrontEnd
 
 2. Déplacez vous dans le dossier `/FrontEnd`
 
