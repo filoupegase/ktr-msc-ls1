@@ -74,3 +74,21 @@ npm start
 ```
 
 Go to http://localhost:3001/
+
+## Security Packages
+
+### Helmet
+
+Helmet helps you secure your Express apps by setting various HTTP headers. It's not a silver bullet, but it can help!
+
+* [Helmet](https://www.npmjs.com/package/helmet)
+
+### mongo-sanitize
+
+For the passionately lazy, a standalone module that sanitizes inputs against query selector injection attacks.
+
+* [mongo-sanitize](https://www.npmjs.com/package/mongo-sanitize)
+
+
+
+

@@ -1,5 +1,7 @@
 const express = require('express');
+const helmet = require('helmet');
 const app = express();
+const mongooseSanitize = require('mongo-sanitize');
 const mongoose = require('mongoose');
 const stuffRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
@@ -7,6 +9,10 @@ require('dotenv').config({ path: process.cwd() + '/.env' });
 
 // Authorise right access to request content - same as body-parser
 app.use(express.json());
+
+app.use(helmet());
+app.use(mongooseSanitize());
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
