@@ -69,7 +69,7 @@ export default class Library extends Component {
       successful: false
     });
     this.form.validateAll();
-    
+
     CardHandler.postCard(
         this.state.name,
         this.state.companyName,

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import Card from './components/Card';
+import Card from '../../components/Card';
 import { Link } from 'react-router-dom';
-import CardHandler from './services/CardHandler';
-import AuthService from './services/auth.service';
+import CardHandler from '../../services/CardHandler';
+import AuthService from '../../services/auth.service';
+import '../App/App.css';
 
 class Home extends Component {
   constructor(props) {

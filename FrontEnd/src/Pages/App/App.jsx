@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthService from '../../services/auth.service';
-import Login from '../../components/Login';
-import Register from '../../components/register';
-import Home from '../../Home';
+import Login from '../Login';
+import Register from '../Register';
+import Home from '../Home';
 import Library from '../Library';
 
 class App extends Component {
@@ -68,7 +68,7 @@ class App extends Component {
                   </li>
 
                   <li className="nav-item">
-                    <Link to={ '/register' } className="nav-link">
+                    <Link to={ '/Register' } className="nav-link">
                       Sign Up
                     </Link>
                   </li>

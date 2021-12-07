@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
 import CheckButton from 'react-validation/build/button';
-import { history } from '../../history';
+import { history } from '../../utils/history';
 import AuthService from '../../services/auth.service';
 
 const required = value => {
