@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class AuthService {
   login(username, password) {
-    return axios.post('http://localhost:3000/api/auth/login', {
+    return axios.post('http://localhost:8000/api/auth/login', {
       username,
       password
     })
@@ -19,7 +19,7 @@ class AuthService {
   }
 
   register(username, companyName, email, password, phoneNumber) {
-    return axios.post('http://localhost:3000/api/auth/signup', {
+    return axios.post('http://localhost:8000/api/auth/signup', {
       username,
       companyName,
       email,
