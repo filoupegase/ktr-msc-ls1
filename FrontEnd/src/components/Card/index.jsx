@@ -10,9 +10,9 @@ class Card extends Component {
         <>
           <article className="card-body">
             <p className="card-title">Name : { name }</p>
-            <p className="card-description">companyName : { companyName }</p>
-            <p className="card-imageUrl">email : { email }</p>
-            <p className="card-userId">phoneNumber : { phoneNumber }</p>
+            <p className="card-description">Company Name : { companyName }</p>
+            <p className="card-imageUrl">Email : { email }</p>
+            <p className="card-userId">Phone Number : { phoneNumber }</p>
           </article>
         </>
     );
@@ -20,7 +20,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   companyName: PropTypes.string,
   email: PropTypes.string,
   phoneNumber: PropTypes.number

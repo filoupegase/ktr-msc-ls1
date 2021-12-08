@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const stuffRoutes = require('./routes/stuff');
@@ -7,6 +8,8 @@ require('dotenv').config({ path: process.cwd() + '/.env' });
 
 // Authorise right access to request content - same as body-parser
 app.use(express.json());
+app.use(cors());
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -19,8 +22,8 @@ mongoose.connect(`mongodb+srv://${ process.env.MONGOOSE_ADMIN }:${ process.env.M
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
-    }).then(() => console.log('Connexion à MongoDB réussie !'))
-    .catch(() => console.log('Connexion à MongoDB échouée !'));
+    }).then(() => console.log('MongoDB is connected !'))
+    .catch((error) => console.log(`MongoDB Error : ${ error }`));
 
 
 app.use('/api/stuff', stuffRoutes);

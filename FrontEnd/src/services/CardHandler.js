@@ -5,7 +5,7 @@ class CardHandler {
 
   getAllCard(username) {
     console.log(username);
-    return axios.post('http://localhost:3000/api/stuff/card/get', {
+    return axios.post('http://localhost:8000/api/stuff/card/get', {
       username
     });
   }
@@ -17,7 +17,7 @@ class CardHandler {
            message
   ) {
     const user = AuthService.getCurrentUser();
-    return axios.post('http://localhost:3000/api/stuff/card/post', {
+    return axios.post('http://localhost:8000/api/stuff/card/post', {
       name,
       companyName,
       email,
