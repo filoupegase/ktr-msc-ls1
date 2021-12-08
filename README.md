@@ -55,7 +55,7 @@ npm install
 nodemon server
 ```
 
-Go to http://localhost:3000/ and check the terminal
+Go to http://localhost:8000/ and check the terminal
 
 #### 2. Set FrontEnd
 
@@ -73,7 +73,7 @@ npm install
 npm start
 ```
 
-Go to http://localhost:3001/
+Go to http://localhost:3000/
 
 ## Security Packages
 
